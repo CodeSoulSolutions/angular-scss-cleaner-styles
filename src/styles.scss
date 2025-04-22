@@ -1,0 +1,57 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$text-color: #333;
+$spacing-unit: 1rem;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-style {
+  padding: $spacing-unit;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+}
+
+// Global styles
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: $text-color;
+  min-height: 100vh;
+  @include flex-center;
+}
+
+.container {
+  text-align: center;
+  padding: $spacing-unit * 2;
+}
+
+h1 {
+  color: $primary-color;
+  margin-bottom: $spacing-unit;
+}
+
+.primary-button {
+  @include button-style;
+  background-color: $primary-color;
+  color: white;
+  margin-right: $spacing-unit;
+}
+
+.secondary-button {
+  @include button-style;
+  background-color: $secondary-color;
+  color: white;
+}
